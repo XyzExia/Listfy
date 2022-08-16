@@ -25,11 +25,21 @@ mutation Login($email: String!, $password: String!) {
 }`
 
 export const ADD_NOTE =gql`
-mutation CreateNote($title: String!, $content: String!) {
-  createNote(title: $title, content: $content) {
-    _id
-    title
-    content
+  mutation CreateNote($title: String!, $content: String!) {
+    createNote(title: $title, content: $content) {
+      _id
+      title
+      content
+    }
   }
-}
+`
+
+export const DELETE_NOTE =gql`
+  mutation deleteNote($id: ID!) {
+    deleteNote(_id: $id) {
+      _id
+      title
+      content
+    }
+  }
 `
