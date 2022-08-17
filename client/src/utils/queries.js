@@ -19,3 +19,13 @@ query AllNotes {
   }
 }
 `;
+
+export const GET_NOTE = gql`
+query GetNote($id: ID!) {
+  getNote(_id: $id) {
+    _id
+    title
+    content
+  }
+}
+`

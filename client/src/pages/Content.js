@@ -5,6 +5,7 @@ import { ALL_NOTES } from '../utils/queries';
 import { ADD_NOTE, DELETE_NOTE } from '../utils/mutations';
 //import { LOGIN_USER } from '../utils/mutations';
 import { useQuery, useMutation } from '@apollo/client';
+import Notedisplay from '../components/Notedisplay';
 
 
 
@@ -18,6 +19,8 @@ const Content = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [deleteNote, { error: deleteError }] = useMutation(DELETE_NOTE);
+
+
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -49,40 +52,7 @@ const Content = () => {
         <>
             {allNotes.map((note) => {
                 return (
-                    <div>
-                        <p>Notes
-
-                            Id: {note._id}
-                            <br />
-                            Title of Note: {note.title}
-
-                            <br />
-                            Content: {note.content}
-                        </p>
-
-                        
-
-                        <button
-                            onClick={ async () => {
-                                try {
-                                    // Execute mutation and pass in defined parameter data as variables
-                                    const { data } = await deleteNote({
-                                        variables: { id: note._id }, //title 
-                                    });
-                        
-                                    window.location.reload();
-                                } catch (err) {
-                                    console.error(err);
-                                }
-                            }}
-                        >
-                            Delete
-                        </button>
-
-
-
-
-                    </div>
+                    <Notedisplay note={note}/>
                 )
             }
             )

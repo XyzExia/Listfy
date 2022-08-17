@@ -43,3 +43,13 @@ export const DELETE_NOTE =gql`
     }
   }
 `
+
+export const UPDATE_NOTE = gql`
+  mutation UpdateNote($id: ID!, $input: NoteUpdateInput) {
+    updateNote(_id: $id, input: $input) {
+      _id
+      title
+      content
+    }
+  }
+`
