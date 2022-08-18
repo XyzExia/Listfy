@@ -32,8 +32,8 @@ const typeDefs = gql`
  }
 
  input NoteUpdateInput {
-   title: String
-   content: String
+   title: String!
+   content: String!
 }
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
@@ -46,3 +46,5 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+//    updateNote(_id: ID!, input: NoteUpdateInput): Note

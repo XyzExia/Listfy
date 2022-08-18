@@ -51,6 +51,7 @@ const resolvers = {
     },
 
     async updateNote(root, { _id, input }) {
+      console.log("working")
       return await Note.findOneAndUpdate({ _id }, input, { new: true })
     },
     async deleteNote(root, { _id }) {
