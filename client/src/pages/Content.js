@@ -8,7 +8,6 @@ import { useQuery, useMutation } from '@apollo/client';
 import Notedisplay from '../components/Notedisplay';
 
 
-
 //import "./App.css";
 
 
@@ -51,40 +50,61 @@ const Content = () => {
     return (
         <>
 
-            <div className="container m-t-20">
+            <div class="d-flex justify-content-center mt-5">
+                <div class="col">
+                    <div class="row ">
 
-                <div className="newnote-page m-t-20">
-                    <form
-                        onSubmit={handleFormSubmit}
-                    >
-                        <div className="field">
-                            <label className="label">Note Title</label>
-                            <div className="control">
-                                <input className="input" type="text" placeholder="Note Title"
-                                    value={title}
-                                    onChange={(event) => setTitle(event.target.value)}
-                                />
+                        <div class="card ">
+                            <div class="">
+                                <form class="card-body" onSubmit={handleFormSubmit}>
+
+                                    <div class="col d-flex flex-row justify-content-center mt-1">
+                                        <div class="d-flex flex-column">
+
+                                            <div class="p-2">
+                                                <h4>
+                                                Title
+                                                </h4>
+                                                <div>
+                                                    <div class="">
+                                                        <input type="text" placeholder="Note Title"
+                                                            value={title}
+                                                            onChange={(event) => setTitle(event.target.value)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="p-2">
+                                                <h4>
+                                                Content
+                                                </h4>
+                                                <div>
+                                                    <div class="">
+                                                        <input type="text" placeholder="Note Title"
+                                                            value={content}
+                                                            onChange={(event) => setContent(event.target.value)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="p-2">
+                                                <div class="">
+                                                    <button class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </form>
+
                             </div>
                         </div>
-
-                        <div class="field">
-                            <label class="label">Note Content</label>
-                            <div class="control">
-                                <textarea class="textarea" rows="10" placeholder="Note Content here..."
-                                    value={content}
-                                    onChange={(event) => setContent(event.target.value)}
-                                >
-                                </textarea>
-                            </div>
-                        </div>
-
-                        <div class="field">
-                            <div class="control">
-                                <button class="button is-link">Submit</button>
-                            </div>
-                        </div>
-
-                    </form>
+                    </div>
                 </div>
             </div>
             {/* form */}
@@ -94,7 +114,10 @@ const Content = () => {
 
             {allNotes.map((note) => {
                 return (
-                    <Notedisplay note={note}/>
+                    <div class="d-flex justify-content-center mt-2">
+
+                    <Notedisplay note={note} />
+                    </div>
                 )
             }
             )
