@@ -11,6 +11,7 @@ import NotFound from './pages/Notfound';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Content from "./pages/Content";
+import Footer from "./components/Footer"
 
 
 import Header from './components/Header';
@@ -38,6 +39,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    
     <ApolloProvider client={client}>
       <Router>
         <Header/>
@@ -70,6 +72,8 @@ function App() {
           </Routes>
         </Container>
       </Router>
+      <Footer
+      element={<Footer/>}/>
     </ApolloProvider>
   );
 }

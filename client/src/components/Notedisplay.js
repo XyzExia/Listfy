@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { DELETE_NOTE, UPDATE_NOTE } from '../utils/mutations';
 import { useMutation, useQuery } from '@apollo/client';
 import { isExecutableDefinitionNode } from 'graphql';
 import { GET_NOTE } from '../utils/queries';
 
 
-
 const Notedisplay = ({ note }) => {
     const [deleteNote, { error: deleteError }] = useMutation(DELETE_NOTE);
     const [updateNote, { error: UpdateError }] = useMutation(UPDATE_NOTE)
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
+    const [title, setTitle] = useState(' ');
+    const [content, setContent] = useState(' ');
     const [isEditing, setIsEditing] = useState(false)
 
     const { loading, data } = useQuery(GET_NOTE);
+
+
 
 
 
@@ -36,100 +37,115 @@ const Notedisplay = ({ note }) => {
 
 
 
-
     return (
-        <div>
-            <form
 
-                onSubmit={handleFormSubmit}
+        <div class="container  mt-5">
+            <div class='row '>
+                <div class="col card">
+                    <form
+                        onSubmit={handleFormSubmit}
+                    >
+                        <h1>Notes</h1>
+                        
+                        <div class="card" >
 
-            >
-                <p>Notes
+                            Id: {note._id}
+                            <br />
+                            Title of Note: {isEditing ? (
 
-                    Id: {note._id}
-                    <br />
-                    Title of Note: {isEditing ? (
+                                <div>
+                                    <input class="input" type="text" placeholder="Note Title"
+                                        value={title}
+                                        onChange={(event) => setTitle(event.target.value)}
+
+                                    //value={title}
+                                    //onChange={(event) => setTitle(event.target.value)}
+                                    />
+                                </div>
+                            ) : (
+                                note.title
+                            )}
+
+                            <br />
+                            Content:
+
+                            {isEditing ? (
+
+                                <div>
+                                    <input class="input" type="text" placeholder="Note Title"
+                                        //value={title}
+                                        //onChange={(event) => setTitle(event.target.value)}
+                                        value={content}
+                                        onChange={(event) => setContent(event.target.value)}
 
 
-                        <div className="control">
-                            <input className="input" type="text" placeholder="Note Title"
-                                value={title}
-                                onChange={(event) => setTitle(event.target.value)}
+                                    />
+                                </div>
 
 
-                            //value={title}
-                            //onChange={(event) => setTitle(event.target.value)}
-                            />
+                            ) : (
+                                note.content
+                            )}
+
                         </div>
-                    ) : (
-                        note.title
-                    )}
+                        <div class=" card-body ">
+                            <button class="btn btn-outline-primary col-6">
+                                {isEditing ? (
+                                    <div
+                                        onClick={handleFormSubmit}
+                                    //isediting save/ edit
+                                    >
+                                        Submit
+                                    </div>
+                                ) : (
 
-                    <br />
-                    Content:
+                                    <div
+                                        onClick={(event) => {
+                                            event.preventDefault();
+                                            setIsEditing(true);
+                                        }}
 
-                    {isEditing ? (
+                                    >Edit</div>
 
-                        <div className="control">
-                            <input className="input" type="text" placeholder="Note Content"
-                                //value={title}
-                                //onChange={(event) => setTitle(event.target.value)}
-                                value={content}
-                                onChange={(event) => setContent(event.target.value)}
+                                )}
+                            </button>
 
 
-                            />
+
+                            <button
+                                onClick={async () => {
+                                    try {
+                                        // Execute mutation and pass in defined parameter data as variables
+                                        const { data } = await deleteNote({
+                                            variables: { id: note._id }, //title 
+                                        });
+
+                                        window.location.reload();
+                                    } catch (err) {
+                                        console.error(err);
+                                    }
+                                }}
+                                class="btn btn-outline-danger  col-6"
+                            >
+                                Delete
+                            </button>
+                            <br></br>
+
+
+
+
                         </div>
+                    </form>
 
-
-                    ) : (
-                        note.content
-                    )}
-
-                </p>
+                </div>
 
 
 
-                <button>
-                    {isEditing ? (
-                        <div 
-                            onClick={handleFormSubmit}
-                        //isediting save/ edit
-                        >
-                            Submit
-                        </div>
-                    ) : (
-
-                        <div
-                            onClick={(event) => {
-                                event.preventDefault();
-                                setIsEditing(true);
-                            }}
-
-                        >Edit</div>
-
-                    )}
-                </button>
-            </form>
 
 
+            </div>
 
-            <button
-                onClick={async () => {
-                    try {
-                        // Execute mutation and pass in defined parameter data as variables
-                        const { data } = await deleteNote({
-                            variables: { id: note._id }, //title 
-                        });
 
-                        window.location.reload();
-                    } catch (err) {
-                        console.error(err);
-                    }
-                }}
-            >
-                Delete
-            </button>
 
 
 
