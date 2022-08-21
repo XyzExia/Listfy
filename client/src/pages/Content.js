@@ -50,18 +50,6 @@ const Content = () => {
 
     return (
         <>
-            {allNotes.map((note) => {
-                return (
-                    <Notedisplay note={note}/>
-                )
-            }
-            )
-            }
-
-
-
-
-
 
             <div className="container m-t-20">
 
@@ -103,6 +91,14 @@ const Content = () => {
             {/* 2 input btn content title*/}
             {/* save btn Submit mutation */}
             {/*  */}
+
+            {allNotes.map((note) => {
+                return (
+                    <Notedisplay note={note}/>
+                )
+            }
+            )
+            }
 
         </>
 
