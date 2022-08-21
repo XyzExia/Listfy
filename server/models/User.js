@@ -22,11 +22,11 @@ const userSchema = new Schema({
   // If your user needs more properties, add them here. Don't forget to add them to the typeDefs.js, resolvers.js and the userSeeds.
     title : {
       type: String,
-      required: true
+      required: false
   },
   content: {
       type: String,
-      required: true
+      required: false
   },
   date: {
       type: Date,
