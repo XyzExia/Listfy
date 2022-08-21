@@ -87,6 +87,13 @@ const Login = (props) => {
           </div>
         </div>
       </div>
+      <div>
+        <p>
+          Testing account:
+          test@test.com
+          password: testtest
+        </p>
+      </div>
     </main>
   );
 };

@@ -23,7 +23,9 @@ const Profile = () => {
             Email: {profileData.email}
             <br/>
             Username: {profileData.username}
+            
         </>
+        
     );
 };
 
