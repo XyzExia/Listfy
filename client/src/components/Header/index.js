@@ -10,6 +10,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
+    <div class="d-flex justify-content-center">
     <Nav>
       <Nav.Item>
         <Nav.Link as={Link} to="/">
@@ -49,6 +50,8 @@ const Header = () => {
         </>
       )}
     </Nav>
+    </div>
+
   );
 };
 
