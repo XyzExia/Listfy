@@ -6,7 +6,7 @@ require('dotenv').config({path: path.join(__dirname, '../.env' )});
 //mongodb://127.0.0.1:27017/final-project-test
 
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/dbtest', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/fptest', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
