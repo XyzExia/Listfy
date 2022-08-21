@@ -18,5 +18,11 @@
     "username": "portia",
     "email": "portia@email.com",
     "password": "password01"
+  },
+  {
+    "username": "test",
+    "email": "test@test.com",
+    "password": "testtest"
   }
+
 ]
