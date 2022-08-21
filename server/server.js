@@ -1,4 +1,4 @@
-require("dotenv").config({ path: path.resolve(__dirname, ".env") });
+require("dotenv").config();
 
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
