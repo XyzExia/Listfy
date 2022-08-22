@@ -1,81 +1,147 @@
-# Final Project Starter
+# 23 Final Project: MERN Stack Single-Page Application 
+# Project : Listfy
 
-This repository is here to work as a basis for your final project
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-## Installation and Setup
+## Description
 
-Install the npm dependencies
-````
-npm install
-````
+Working individually or as a team, we were given the task of building a MERN Stack Single-Page application of our choice. This project gives us the opportunity to demonstrate and implement the skills and knowledge gained from the beginning of our full stack journey. The project had to include the following requirements.
 
-Setting up environment variables
-1. Rename .env.EXAMPLE -> .env in the server folder
-2. Update the jwt secret to a random value. This will be used to sign your json web tokens. If someone else knows what this is they will be able to login as anyone!
-
-Rename the following files/folders to your application name
-- The name property in package.json, client/package.json and server/package.json
-- The root folder name
-- In server/config/connection.js change the url database name to something that makes sense for your app. e.g. "mongodb://localhost/meal-tracker-db"
-- In client/public/index.html update the <title> and <meta> tags to give your site a proper title and description
-
-Change the user seeds if you wish.
-
-## Running the application
-
-If this is the first time running and you would like some test data, seeds can be run with:
-````
-npm run seed
-````
-
-To start in develop mode:
-````
-npm run develop
-````
-This will start both the front-end and backend in watch mode
-
-To start the services independently:
-Front end:
-````
-cd client && npm start
-````
-
-Back end:
-````
-cd server && npm watch
-````
+This project: Listfy is a list taking application demonstrating full CRUD functionality inside a MERN stack app. 
 
 
-## Deployment
+### Project Requirements
 
-1. When deploying to heroku, make sure that you add the necessary environment variables (JWT_SECRET and MONGODB_URI) to the heroku settings
+* Use React for the front end.
 
-## How to get started
+* Use GraphQL with a Node.js and Express.js server.
 
-When starting to develop your app, it might be difficult to know where to start. This section should give you an idea of a way to start. This process is only one way to start and there may be a different process that works better for you or your app.
+* Use MongoDB and the Mongoose ODM for the database.
 
-- Think about what the user experience of your app will be. What screens will you have, what buttons will be on the screens and what actions will they perform. It can be really helpful to sketch out the screens you have on paper or in a program such as figma.
-- Once you know how users will interact with your app, think about what models you will need to integrate with the features of your application. Consider a scenario in which I want to make a todo list app where users are able to add and remove items and mark them as complete. I would need a model for my users, so they're able to login and have specific todos. Users would have properties such as name, email, password etc. I would also need a model for my Todo item, they might have a title, description, completion_status etc. There would also have to be a relation between Todo Items and Users. If you have a complicated model, it might help to draw out your models and how they relate to each other.
-- Once you think you know how your models are going to work, create the appropriate model files in the models folder. These will create the database entities that get stored in the database.
-- Next think about what information you need to retrieve from the database and how users will effect the information. This will inform what queries and mutations you will need to create for graphql. For the todo example, I might need the following queries: 
-    - getMyTodos: a query that returns a list of todo items which you've added.
-    - getMyCompleteTodos: a query that returns all the todos you've completed.
+* Use queries and mutations for retrieving, adding, updating, and deleting data.
 
-    I also might need the following mutations:
-    - addNewTodo: a mutation that accepts all necessary parameters to create a new todo item
-    - completeTodo: a mutation that takes the id of a todo and marks it as complete.
-    - removeTodo: a mutation that takes the id of a todo and deletes it
-    - addUser: allow users to signup
-    - login: allow users to login and get a token
+* Be deployed using Heroku (with data).
 
-- Once you know what queries and mutations you will need fill out the typeDefs and then the resolvers. As you add more queries and mutations you should be able to start your server and test the routes as you go in the graphql playground. Start with only a few essential queries and mutations. Other queries and mutations can easily be implemented later.
-- Once your queries and mutations are working it's time to start working on the frontend.
+* Have a polished UI.
 
-- There are a few different ways you could work on the frontend this is one approach that may work for you.
-- Start in App.js and add the necessary routes with react router that you will need.
-- Build the individual pages paying attention to contain certain UI elements to seperate components where it makes sense.
-- When building a page that may display data from the frontend you could replace the api call with some dummy data while you're working on it and configure the api call later. e.g. if you're working on a list of todo items you could add the below code to the top of your component, then replace it with the actual api call when you are happy with the design.
-````
-const todos = [{id: 123, title: 'todo 1'}, {id: 124, title: 'todo 2'}];
-````
-- Be sure to define the necessary mutations and queries that your app will be using in the utils/mutations and utils/queries folder.
+* Be responsive.
+
+* Be interactive (i.e., accept and respond to user input).
+
+* Include authentication (JWT).
+
+* Protect sensitive API key information on the server.
+
+* Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
+
+
+<br>
+<br> 
+
+To view the applicatoin [click here and you will be directed to the live webpage](https://iso-meals.herokuapp.com/)
+
+
+# Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [License](#license)
+- [Contribute](#contribute)
+<br>
+
+
+## Installation
+
+1. Clone the repo
+
+   ```sh
+   git clone https://github.com/XyzExia/Lisfty.git
+   ```
+
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+## Usage
+
+To run this application, the following need to be installed and implemented in the command line.
+
+- Npm init - for node packages
+- Npm install - for multiple packages
+- Npm run build - To develop the front-end
+- Npm start - to initialize the back-end
+- Npm run develop - to run in development stage
+
+Once that has been completed in the console, application will look like the following. 
+
+![home](/client/public/src/assets/images/FPimg.PNG)
+
+Here they can login, signup to view their personal list. Once logged in they will be able to view their own personal list tied to that account. 
+
+![Loged](/client/public/src/assets/images/Loged1.PNG)
+
+Once they've loged in they can add and edit notes as the user pleases
+
+![loged](/client/public/src/assets/images/Loged1.PNG)
+
+If they wish to exist the app, simply logout or close the browser.
+
+<br>
+
+## Features
+This application was made up of the following features: 
+- apollo-client
+- bcrypt
+- boostrap
+- concurrently 
+- dotenv
+- emailjs
+- express
+- graphQL
+- JWT-decode
+- mongoose
+- node.js
+- nodemon 
+- react
+- react-bootstrap
+- react-dom
+- react-router-dom
+- react-scripts
+
+
+## Contribution
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Zekun Chen - [XyzExia](zekunchen97@gmail.com)
+
+Project Link: [Repository]([https://github.com/gurtej154/Coinance](https://github.com/XyzExia/Listfy))
