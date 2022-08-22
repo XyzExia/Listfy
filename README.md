@@ -9,6 +9,9 @@ Working individually or as a team, we were given the task of building a MERN Sta
 
 This project: Listfy is a list taking application demonstrating full CRUD functionality inside a MERN stack app. 
 
+See the Deployed Heroku App at
+(https://listfyed.herokuapp.com/)
+
 
 ### Project Requirements
 
@@ -80,15 +83,15 @@ To run this application, the following need to be installed and implemented in t
 
 Once that has been completed in the console, application will look like the following. 
 
-![home](/client/public/src/assets/images/FPimg.PNG)
+![home](https://raw.githubusercontent.com/XyzExia/Listfy/main/client/src/assets/images/FPimg.PNG)
 
 Here they can login, signup to view their personal list. Once logged in they will be able to view their own personal list tied to that account. 
 
-![Loged](/client/public/src/assets/images/Loged1.PNG)
+![Loged](https://raw.githubusercontent.com/XyzExia/Listfy/main/client/src/assets/images/Loged1.PNG)
 
 Once they've loged in they can add and edit notes as the user pleases
 
-![loged](/client/public/src/assets/images/Loged1.PNG)
+![loged](https://github.com/XyzExia/Listfy/blob/main/client/src/assets/images/Loged2.PNG)
 
 If they wish to exist the app, simply logout or close the browser.
 
