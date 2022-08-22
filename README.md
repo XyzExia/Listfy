@@ -41,8 +41,6 @@ See the Deployed Heroku App at
 <br>
 <br> 
 
-To view the applicatoin [click here and you will be directed to the live webpage](https://iso-meals.herokuapp.com/)
-
 
 # Table of Contents
 - [Description](#description)
